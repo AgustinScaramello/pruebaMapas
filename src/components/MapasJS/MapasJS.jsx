@@ -25,7 +25,7 @@ export const MapasJS = () => {
 		<div
 			id="map"
 			ref={mapContainerRef}
-			style={{ height: "500px", width: "500px" }}
+			style={{ height: "300px", width: "300px" }}
 		/>
 	)
 }

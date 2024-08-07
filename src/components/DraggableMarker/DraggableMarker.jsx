@@ -1,4 +1,4 @@
-import { useState, useRef, useMemo } from "react"
+import { useState, useEffect, useRef, useMemo } from "react"
 import { Marker, Popup } from "react-leaflet"
 
 export const DraggableMarker = ({ center }) => {
@@ -17,7 +17,10 @@ export const DraggableMarker = ({ center }) => {
 		[]
 	)
 
-	console.log(position)
+	useEffect(() => {
+		setPosition(center)
+	}, [center])
+
 	return (
 		<Marker
 			draggable={false}
@@ -27,7 +30,7 @@ export const DraggableMarker = ({ center }) => {
 		>
 			<Popup minWidth={90}>
 				<span>
-					Estas en la latitud {position.lat} y longitud {position.lng}
+					Estás en la latitud {position.lat} y longitud {position.lng}
 				</span>
 			</Popup>
 		</Marker>
